@@ -1,0 +1,16 @@
+{
+  "name": "js-db-dataset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "convert": "node convert.mjs",
+    "start": "node index.mjs && node convert.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0"
+  }
+}
