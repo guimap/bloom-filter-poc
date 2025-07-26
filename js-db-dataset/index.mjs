@@ -1,12 +1,14 @@
 import { faker } from '@faker-js/faker'
 import { createWriteStream } from 'fs'
 
+faker.seed(1029)
+
 function generateEmail() {
     return `${faker.string.uuid()}@example.com`
 }
 
 function generateUser(i) {
-    return {      
+    return {
         id: faker.string.uuid(),
         email: generateEmail(),
         name: faker.person.firstName(),
@@ -17,7 +19,7 @@ function generateUser(i) {
 const file = createWriteStream('../users.csv', { encoding: 'utf8' })
 file.write('id,email,name,number\n')
 
-const TOTAL = 10_000_000
+const TOTAL = 10000 // 10_000_000
 
 function writeUsers() {
     let i = 0
@@ -33,7 +35,7 @@ function writeUsers() {
             file.once('drain', write)
         } else {
             file.end()
-             }
+        }
     }
     write()
 }

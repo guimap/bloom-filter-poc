@@ -22,6 +22,11 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 EOF
+
+# Executa o arquivo  populate_bloom.py passando o arquivo atual como argumento
+  echo "Populando Bloom Filter com $file"
+  python bloom_seed.py "$file"
 done
 
 echo "Importação finalizada."
+touch /data/importer_done.flag
